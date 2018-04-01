@@ -8,7 +8,19 @@ class JobExperience {
   public readonly title: string;
   public readonly summary: Markdown;
 
-  constructor({ startedAt, endedAt, employee, title, summary }: { startedAt: DateTime; endedAt: DateTime; employee: string; title: string; summary: Markdown }) {
+  constructor({
+    startedAt,
+    endedAt,
+    employee,
+    title,
+    summary,
+  }: {
+    startedAt: DateTime;
+    endedAt: DateTime;
+    employee: string;
+    title: string;
+    summary: Markdown;
+  }) {
     this.startedAt = startedAt;
     this.endedAt = endedAt;
     this.employee = employee;
