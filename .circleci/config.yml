@@ -1,0 +1,119 @@
+version: 2
+default_setting: &default_setting
+  docker:
+    - image: circleci/node:9.2.1
+  working_directory: ~/repo
+jobs:
+  checkout:
+    <<: *default_setting
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  lint:
+    <<: *default_setting
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: npm run lint -- --list-different
+  test:
+    <<: *default_setting
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: npm test -- --verbose --coverage --maxWorkers 3
+  build-latest:
+    <<: *default_setting
+    environment:
+      FIREBASE_API_KEY: $LATEST_FIREBASE_API_KEY
+      FIREBASE_PROJECT_ID: $LATEST_FIREBASE_PROJECT_ID
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          command: npm run build -- --mode production
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  build-production:
+    <<: *default_setting
+    environment:
+      FIREBASE_API_KEY: $LATEST_FIREBASE_API_KEY
+      FIREBASE_PROJECT_ID: $LATEST_FIREBASE_PROJECT_ID
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          command: npm run build -- --mode production
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  deploy-latest:
+    <<: *default_setting
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          command: |
+            npm i firebase-tools
+            ./node_modules/.bin/firebase deploy --only hosting --token "${FIREBASE_AUTH_TOKEN}" --project axross-io-dev
+  deploy-production:
+    <<: *default_setting
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          command: |
+            npm i firebase-tools
+            ./node_modules/.bin/firebase deploy --only hosting --token "${FIREBASE_AUTH_TOKEN}" --project axross-io-dev
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - checkout
+      - lint:
+          requires:
+            - checkout
+      - test:
+          requires:
+            - checkout
+      - build-latest:
+          filters:
+            branches:
+              only: master
+          requires:
+            - checkout
+      - build-production:
+          filters:
+            branches:
+              only: production
+          requires:
+            - checkout
+      - deploy-latest:
+          filters:
+            branches:
+              only: master
+          requires:
+            - lint
+            - test
+            - build-latest
+      - deploy-production:
+          filters:
+            branches:
+              only: production
+          requires:
+            - lint
+            - test
+            - build-production
