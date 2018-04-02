@@ -13,7 +13,7 @@ module.exports = {
   entry: './src/main.ts',
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'app.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -26,10 +26,22 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.json', '.jsx', '.js'],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Document',
       template: './src/index.html',
+      hash: true,
       config,
     }),
   ],
