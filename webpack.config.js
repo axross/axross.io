@@ -20,6 +20,9 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
       },
     ],
   },
