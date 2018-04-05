@@ -37,7 +37,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      - run: npm test -- --verbose --coverage --maxWorkers 3
+      - run: npm test -- --verbose --coverage
   build-latest:
     <<: *default_setting
     environment:
