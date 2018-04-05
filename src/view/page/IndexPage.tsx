@@ -1,6 +1,7 @@
 import glamorous from 'glamorous';
 import { ClassAttributes, createElement, MouseEventHandler } from 'react';
 import JobExperience from '../../entity/JobExperience';
+import Counter from './Counter';
 
 type Props = ClassAttributes<HTMLElement> & {
   jobExperiences: JobExperience[];
@@ -12,9 +13,8 @@ type Props = ClassAttributes<HTMLElement> & {
 const IndexPage = ({ jobExperiences, count, onClickIncrement, onClickDecrement }: Props) => (
   <Root>
     <ul>{jobExperiences.map(jobExperience => <li key={jobExperience.employee}>{jobExperience.employee}</li>)}</ul>
-    count: {count}
-    <button onClick={onClickIncrement}>increment</button>
-    <button onClick={onClickDecrement}>decrement</button>
+
+    <Counter count={count} onClickIncrement={onClickIncrement} onClickDecrement={onClickDecrement} />
   </Root>
 );
 

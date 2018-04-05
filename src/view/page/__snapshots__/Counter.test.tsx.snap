@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Counter> it matches with the previous snapshot 1`] = `
+<glamorous(div)>
+  count: 
+  5
+  <button
+    onClick={[Function]}
+  >
+    increment
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    decrement
+  </button>
+</glamorous(div)>
+`;
