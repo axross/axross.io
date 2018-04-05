@@ -26,6 +26,12 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: npm run lint -- --list-different
+  check:
+    <<: *default_setting
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: npm run check
   test:
     <<: *default_setting
     steps:
@@ -86,6 +92,9 @@ workflows:
       - lint:
           requires:
             - checkout
+      - check:
+          requires:
+            - checkout
       - test:
           requires:
             - checkout
@@ -107,6 +116,7 @@ workflows:
               only: master
           requires:
             - lint
+            - check
             - test
             - build-latest
       - deploy-production:
@@ -115,5 +125,6 @@ workflows:
               only: production
           requires:
             - lint
+            - check
             - test
             - build-production
