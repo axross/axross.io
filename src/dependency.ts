@@ -1,7 +1,7 @@
 import { Store } from './state';
-import JobExperienceRepository from './repository/JobExperienceRepository';
+import WorkExperienceRepository from './repository/WorkExperienceRepository';
 
 export type Dependency = {
   store: Store;
-  jobExperienceRepository: JobExperienceRepository;
+  workExperienceRepository: WorkExperienceRepository;
 };

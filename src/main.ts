@@ -4,9 +4,10 @@ import { createBrowserHistory } from 'history';
 import { createElement } from 'react';
 import { hydrate, render } from 'react-dom';
 import { Store } from 'repatch';
-import JobExperienceRepository from './repository/JobExperienceRepository';
+import WorkExperienceRepository from './repository/WorkExperienceRepository';
 import { initialState, State } from './state';
 import Root from './Root';
+import patchGlobalStyle from './patchGlobalStyle';
 
 window.addEventListener('DOMContentLoaded', () => {
   const config = (window as any).__config__;
@@ -18,12 +19,12 @@ window.addEventListener('DOMContentLoaded', () => {
     apiKey: config.FIREBASE_API_KEY,
   });
 
-  const jobExperienceRepository = new JobExperienceRepository({ firestore: firebaseApp.firestore() });
+  const workExperienceRepository = new WorkExperienceRepository({ firestore: firebaseApp.firestore() });
 
   let isRendered = false;
   const container = document.getElementById('app');
   const update = (state: State) => {
-    const element = createElement(Root, { history, store, jobExperienceRepository, state });
+    const element = createElement(Root, { history, store, workExperienceRepository, state });
 
     if (!isRendered) {
       isRendered = true;
@@ -38,6 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   store.subscribe(() => update(store.getState()));
   history.listen(() => update(store.getState()));
+
+  patchGlobalStyle();
 
   update(store.getState());
 });
