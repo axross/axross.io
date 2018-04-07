@@ -5,20 +5,20 @@ import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
 import { Dependency } from './dependency';
 import { State, Store } from './state';
-import JobExperienceRepository from './repository/JobExperienceRepository';
+import WorkExperienceRepository from './repository/WorkExperienceRepository';
 import IndexPage from './view/connected/IndexPage';
 
 type Props = ClassAttributes<HTMLElement> & {
   history: History;
   store: Store;
-  jobExperienceRepository: JobExperienceRepository;
+  workExperienceRepository: WorkExperienceRepository;
   state: State;
   className?: string;
 };
 
-const Root = ({ history, store, jobExperienceRepository, state, className }: Props) => (
+const Root = ({ history, store, workExperienceRepository, state, className }: Props) => (
   <Router history={history}>
-    <Broadcast channel="dependency" value={{ store, jobExperienceRepository } as Dependency}>
+    <Broadcast channel="dependency" value={{ store, workExperienceRepository } as Dependency}>
       <Broadcast channel="state" value={state}>
         <_Root className={className}>
           <PageContent>

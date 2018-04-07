@@ -8,13 +8,13 @@ import IndexPage from '../page/IndexPage';
 
 const Connected = () => (
   <Subscriber channel="dependency">
-    {({ store, jobExperienceRepository }: Dependency) => (
+    {({ store, workExperienceRepository }: Dependency) => (
       <Subscriber channel="state">
         {(state: State) => (
-          <Bind subscribe={jobExperienceRepository.subscribe}>
-            {jobExperiences => (
+          <Bind subscribe={workExperienceRepository.subscribe}>
+            {workExperiences => (
               <IndexPage
-                jobExperiences={jobExperiences || []}
+                workExperiences={workExperiences || []}
                 count={state.count}
                 onClickIncrement={() => store.dispatch(increment())}
                 onClickDecrement={() => store.dispatch(decrement())}
