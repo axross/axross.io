@@ -4,7 +4,7 @@ import { ClassAttributes, createElement } from 'react';
 import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
 import { Dependency } from './dependency';
-import { State, Store } from './state';
+import State, { Store } from './core/State';
 import WorkExperienceRepository from './repository/WorkExperienceRepository';
 import IndexPage from './view/connected/IndexPage';
 

@@ -4,8 +4,9 @@ import { createBrowserHistory } from 'history';
 import { createElement } from 'react';
 import { hydrate, render } from 'react-dom';
 import { Store } from 'repatch';
+import State from './core/State';
 import WorkExperienceRepository from './repository/WorkExperienceRepository';
-import { initialState, State } from './state';
+import initialState from './initialState';
 import Root from './Root';
 import patchGlobalStyle from './patchGlobalStyle';
 

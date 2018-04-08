@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { Subscriber } from 'react-broadcast';
 import { Dependency } from '../../dependency';
-import { State } from '../../state';
+import State from '../../core/State';
 import { decrement, increment } from '../../thunk/count';
 import Bind from '../component/Bind';
 import IndexPage from '../page/IndexPage';

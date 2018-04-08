@@ -1,4 +1,4 @@
-import { State } from '../state';
+import State from '../core/State';
 
 export const increment = () => (state: State): State => ({
   ...state,
