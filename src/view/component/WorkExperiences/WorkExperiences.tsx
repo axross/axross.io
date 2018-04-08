@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { ClassAttributes, createElement, ReactElement } from 'react';
+import { Children, ClassAttributes, createElement, ReactElement } from 'react';
 import theme from '../../../theme';
 import { flexibleLayoutContainer } from '../../styleUtility/flexibleLayout';
 import Text from '../Text';
@@ -10,13 +10,19 @@ type Props = ClassAttributes<HTMLElement> & {
   children: ReactElement<ItemProps>[] | ReactElement<ItemProps>;
 };
 
-const JobExperiences = ({ className, children }: Props) => (
-  <Root className={className}>
-    <Heading type="heading">🏢 WORK EXPERIENCE</Heading>
+const JobExperiences = ({ className, children }: Props) => {
+  const sortedChildren = (Children.toArray(children) as ReactElement<ItemProps>[]).sort(
+    (a, b) => 0 - a.props.workExperience.compare(b.props.workExperience),
+  );
 
-    <Items>{children}</Items>
-  </Root>
-);
+  return (
+    <Root className={className}>
+      <Heading type="heading">🏢 WORK EXPERIENCE</Heading>
+
+      <Items>{sortedChildren}</Items>
+    </Root>
+  );
+};
 
 const Root = glamorous.div({});
 
