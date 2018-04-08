@@ -8,7 +8,7 @@ const patchGlobalStyle = () => {
   });
 
   insertGlobal('html, body', {
-    backgroundColor: '#4A58E2',
+    backgroundColor: '#3d5afe',
   });
 };
 
