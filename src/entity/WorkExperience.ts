@@ -7,6 +7,19 @@ class WorkExperience {
   public readonly employeeThumbnailImageUrl: string;
   public readonly summary: string;
 
+  public compare = (other: WorkExperience): number => {
+    const thisEndedAtAsNumber = this.endedAt === null ? Number.MAX_SAFE_INTEGER : this.endedAt.valueOf();
+    const otherEndedAtAsNumber = other.endedAt === null ? Number.MAX_SAFE_INTEGER : other.endedAt.valueOf();
+
+    const comparedWithEndedAt = thisEndedAtAsNumber - otherEndedAtAsNumber;
+
+    if (comparedWithEndedAt === 0) {
+      return this.startedAt.valueOf() - other.startedAt.valueOf();
+    } else {
+      return comparedWithEndedAt;
+    }
+  };
+
   constructor({
     startedAt,
     endedAt,
