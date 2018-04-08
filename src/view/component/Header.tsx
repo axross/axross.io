@@ -24,7 +24,7 @@ const Root = glamorous.header({
     alignContent: 'center',
   }),
   width: '100%',
-  height: 800,
+  height: '100vh',
 });
 
 const Name = glamorous(Text)({
