@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { ClassAttributes, createElement, MouseEventHandler } from 'react';
+import { ClassAttributes, createElement } from 'react';
 import Expertise from '../../entity/Expertise';
 import WorkExperience from '../../entity/WorkExperience';
 import theme from '../../theme';
@@ -11,17 +11,13 @@ import _Footer from '../component/Footer';
 import _Header from '../component/Header';
 import { Brick, Clean, ClientAndServer, CodeForUser, PullRequest, SpeedoMeter } from '../component/Icon';
 import _Introduction from '../component/Introduction';
-import Counter from './Counter';
 
 type Props = ClassAttributes<HTMLElement> & {
   expertises: Expertise[];
   workExperiences: WorkExperience[];
-  count: number;
-  onClickIncrement: MouseEventHandler<HTMLElement>;
-  onClickDecrement: MouseEventHandler<HTMLElement>;
 };
 
-const IndexPage = ({ expertises, workExperiences, count, onClickIncrement, onClickDecrement }: Props) => (
+const IndexPage = ({ expertises, workExperiences }: Props) => (
   <Root>
     <Header />
 
@@ -66,8 +62,6 @@ const IndexPage = ({ expertises, workExperiences, count, onClickIncrement, onCli
     </WorkExperiences>
 
     <Footer />
-
-    <Counter count={count} onClickIncrement={onClickIncrement} onClickDecrement={onClickDecrement} />
   </Root>
 );
 

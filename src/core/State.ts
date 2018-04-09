@@ -3,7 +3,6 @@ import Expertise from '../entity/Expertise';
 import WorkExperience from '../entity/WorkExperience';
 
 type State = {
-  count: number;
   expertises: Expertise[];
   workExperiences: WorkExperience[];
 };

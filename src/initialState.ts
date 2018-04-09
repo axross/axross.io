@@ -4,7 +4,6 @@ import Expertise from './entity/Expertise';
 import WorkExperience from './entity/WorkExperience';
 
 const initialState: State = {
-  count: 0,
   expertises: [
     new Expertise({ type: 'TYPESCRIPT' }),
     new Expertise({ type: 'REACT' }),
