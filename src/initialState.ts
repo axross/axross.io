@@ -15,6 +15,8 @@ const initialState: State = {
     new Expertise({ type: 'HTML' }),
     new Expertise({ type: 'CSS' }),
   ],
+  introduction:
+    "Hello, my name is Kohei Asai a.k.a @axross. I'm currently working at Kaizen Platform, Inc. as a frontend developer. I'm an expert at building single page applications. But also sometimes design its UI and UX. I have experience of 4+ years in web development.",
   workExperiences: [
     new WorkExperience({
       employeeName: 'Kaizen Platform, Inc.',

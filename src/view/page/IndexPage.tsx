@@ -14,14 +14,15 @@ import _Introduction from '../component/Introduction';
 
 type Props = ClassAttributes<HTMLElement> & {
   expertises: Expertise[];
+  introduction: string;
   workExperiences: WorkExperience[];
 };
 
-const IndexPage = ({ expertises, workExperiences }: Props) => (
+const IndexPage = ({ expertises, introduction, workExperiences }: Props) => (
   <Root>
     <Header />
 
-    <Introduction />
+    <Introduction>{introduction}</Introduction>
 
     <Expertises rows={5}>
       {expertises.map(expertise => <ExpertisesItem expertise={expertise} key={expertise.type} />)}

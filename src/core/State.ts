@@ -4,6 +4,7 @@ import WorkExperience from '../entity/WorkExperience';
 
 type State = {
   expertises: Expertise[];
+  introduction: string;
   workExperiences: WorkExperience[];
 };
 

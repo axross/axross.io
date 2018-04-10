@@ -5,7 +5,13 @@ import IndexPage from '../page/IndexPage';
 
 const Connected = () => (
   <Subscriber channel="state">
-    {(state: State) => <IndexPage expertises={state.expertises} workExperiences={state.workExperiences} />}
+    {(state: State) => (
+      <IndexPage
+        expertises={state.expertises}
+        introduction={state.introduction}
+        workExperiences={state.workExperiences}
+      />
+    )}
   </Subscriber>
 );
 
