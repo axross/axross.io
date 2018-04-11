@@ -24,9 +24,7 @@ exports[`<IndexPage> it matches with the previous snapshot 1`] = `
       key="NODEJS"
     />
   </Styled(Expertises)>
-  <Styled(Principles)
-    rows={3}
-  >
+  <Styled(Principles)>
     <PrinciplesItem
       icon={[Function]}
       name="Both of *-side"
