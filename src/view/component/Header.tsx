@@ -1,8 +1,6 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement } from 'react';
+import styled from '../../core/emotion';
 import Text from './Text';
-import { gridLayoutContainer, gridLayoutItem } from '../styleUtility/gridLayout';
-import theme from '../../theme';
 
 type Props = ClassAttributes<HTMLElement> & {
   className?: string;
@@ -16,25 +14,24 @@ const Header = ({ className }: Props) => (
   </Root>
 );
 
-const Root = glamorous.header({
-  ...gridLayoutContainer({
-    columns: ['1fr'],
-    rows: ['auto', 'auto'],
-    areas: [['name'], ['title']],
-    alignContent: 'center',
-  }),
-  width: '100%',
-  height: '100vh',
-});
+const Root = styled('header')`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 'name' 'title';
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+`;
 
-const Name = glamorous(Text)({
-  ...gridLayoutItem('name'),
-  marginBottom: theme.spacing.regular,
-});
+const Name = styled(Text)`
+  grid-area: name;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
+`;
 
-const Title = glamorous(Text)({
-  ...gridLayoutItem('title'),
-  opacity: 0.5,
-});
+const Title = styled(Text)`
+  grid-area: title;
+  opacity: 0.5;
+`;
 
 export default Header;

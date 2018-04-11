@@ -1,13 +1,13 @@
-import glamorous from 'glamorous';
-import { ClassAttributes, createElement, CSSLength } from 'react';
+import { ClassAttributes, createElement } from 'react';
+import styled from '../../core/emotion';
 
 type AspectRatio = [number, number];
 
 type Props = {
   src: string;
   aspectRatio: AspectRatio;
-  width?: CSSLength;
-  height?: CSSLength;
+  width?: string;
+  height?: string;
   className?: string;
 };
 
@@ -23,14 +23,17 @@ const AspectRatioFixedImage = ({
   </Root>
 );
 
-const Root = glamorous.div(({ width, height }: { width: CSSLength; height: CSSLength }) => ({ width, height }));
+const Root = styled<{ width: string; height: string }, 'div'>('div')`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+`;
 
-const Inner = glamorous.div(({ src, aspectRatio }: { src: string; aspectRatio: AspectRatio }) => ({
-  paddingTop: `${100 / aspectRatio[0] * aspectRatio[1]}%`,
-  backgroundImage: `url(${src})`,
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center center',
-}));
+const Inner = styled<{ src: string; aspectRatio: AspectRatio }, 'div'>('div')`
+  padding-top: ${({ aspectRatio }) => 100 / aspectRatio[0] * aspectRatio[1]}%;
+  background-image: url(${({ src }) => src});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+`;
 
 export default AspectRatioFixedImage;

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IndexPage> it matches with the previous snapshot 1`] = `
+<Styled(div)>
+  <Styled(Header) />
+  <Styled(Introduction)>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </Styled(Introduction)>
+  <Styled(Expertises)>
+    <ExpertisesItem
+      expertise={
+        Expertise {
+          "type": "TYPESCRIPT",
+        }
+      }
+      key="TYPESCRIPT"
+    />
+    <ExpertisesItem
+      expertise={
+        Expertise {
+          "type": "NODEJS",
+        }
+      }
+      key="NODEJS"
+    />
+  </Styled(Expertises)>
+  <Styled(Principles)
+    rows={3}
+  >
+    <PrinciplesItem
+      icon={[Function]}
+      name="Both of *-side"
+    >
+      We have to know well server-side to know client-side well, and vice versa. My specialty is client-side but I also have enough knowledge for server-side.
+    </PrinciplesItem>
+    <PrinciplesItem
+      icon={[Function]}
+      name="User Centered"
+    >
+      Software is made for users. I keep in mind to design UI and even to name identifiers with thinking of users.
+    </PrinciplesItem>
+    <PrinciplesItem
+      icon={[Function]}
+      name="OSS Style"
+    >
+      I'll create an Issue when I find some problem or some kind of improvement, I'll post an Issue, fix it or improve it, create a Pull Request, test and build on CI and then deploy it via code reviewing.
+    </PrinciplesItem>
+    <PrinciplesItem
+      icon={[Function]}
+      name="Be Agile"
+    >
+      I think objective feedbacks from users are more important than subjective our sense of accomplishment. I like to improve our software little by little and as agile.
+    </PrinciplesItem>
+    <PrinciplesItem
+      icon={[Function]}
+      name="As Robust"
+    >
+      The code which is not enough designed for application architecture will decline productivity soon. I always write robust code to keep high productivity long time.
+    </PrinciplesItem>
+    <PrinciplesItem
+      icon={[Function]}
+      name="Keep Clean"
+    >
+      Code ages as same as cells. But code can be refactored. I never leave code untidy.
+    </PrinciplesItem>
+  </Styled(Principles)>
+  <Styled(JobExperiences)>
+    <WorkExperiencesItem
+      key="Eighty Three, Inc."
+      workExperience={
+        WorkExperience {
+          "compare": [Function],
+          "employeeName": "Eighty Three, Inc.",
+          "employeeThumbnailImageUrl": "https://eighty-three.co.jp/",
+          "endedAt": "1970-01-01T09:00:00.000+09:00",
+          "startedAt": "1970-01-01T09:00:00.000+09:00",
+          "summary": "Yeah",
+        }
+      }
+    />
+  </Styled(JobExperiences)>
+  <Styled(Footer) />
+</Styled(div)>
+`;

@@ -1,5 +1,5 @@
-import glamorous, { CSSProperties } from 'glamorous';
 import { ClassAttributes, createElement, ReactNode } from 'react';
+import styled from '../../core/emotion';
 
 type Type = 'default' | 'heading2' | 'body1' | 'body2' | 'sub' | 'heading' | 'name' | 'title';
 
@@ -10,54 +10,54 @@ type Props = ClassAttributes<HTMLElement> & {
   children?: ReactNode;
 };
 
-const Text = ({ type, sentence, className, children }: Props) => (
+const Text = ({ type, sentence = false, className, children }: Props) => (
   <Root type={type} sentence={sentence} className={className}>
     {children}
   </Root>
 );
 
-const TYPE: Record<Type, CSSProperties> = {
-  default: {
-    fontSize: 14,
-    fontWeight: 400,
-  },
-  heading2: {
-    fontSize: 24,
-    fontWeight: 400,
-  },
-  body1: {
-    fontSize: 20,
-    fontWeight: 400,
-  },
-  body2: {
-    fontSize: 16,
-    fontWeight: 400,
-  },
-  sub: {
-    fontSize: 14,
-    fontWeight: 400,
-  },
-  heading: {
-    fontSize: 45,
-    fontWeight: 900,
-  },
-  name: {
-    fontSize: 112,
-    fontWeight: 900,
-  },
-  title: {
-    fontSize: 56,
-    fontWeight: 900,
-  },
+const TYPE: Record<Type, string> = {
+  default: `
+    font-size: 14px;
+    font-weight: 400;
+  `,
+  heading2: `
+    font-size: 24px;
+    font-weight: 400;
+  `,
+  body1: `
+    font-size: 20px;
+    font-weight: 400;
+  `,
+  body2: `
+    font-size: 16px;
+    font-weight: 400;
+  `,
+  sub: `
+    font-size: 14px;
+    font-weight: 400;
+  `,
+  heading: `
+    font-size: 45px;
+    font-weight: 900;
+  `,
+  name: `
+    font-size: 112px;
+    font-weight: 900;
+  `,
+  title: `
+    font-size: 56px;
+    font-weight: 900;
+  `,
 };
 
-const Root = glamorous.span(({ type, sentence }: { type: Type; sentence?: boolean }) => ({
-  display: 'block' as any,
-  lineHeight: sentence ? 1.5 : 1,
-  color: '#fff',
-  fontFamily: 'Montserrat',
-  WebkitFontSmoothing: 'antialiased',
-  ...TYPE[type],
-}));
+const Root = styled<{ type: Type; sentence: boolean }, 'span'>('span')`
+  display: block;
+  line-height: ${({ sentence }) => (sentence ? 1.5 : 1)};
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  ${({ type }) => TYPE[type]};
+`;
 
 export default Text;

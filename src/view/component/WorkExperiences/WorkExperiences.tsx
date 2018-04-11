@@ -1,7 +1,5 @@
-import glamorous from 'glamorous';
 import { Children, ClassAttributes, createElement, ReactElement } from 'react';
-import theme from '../../../theme';
-import { flexibleLayoutContainer } from '../../styleUtility/flexibleLayout';
+import styled from '../../../core/emotion';
 import Text from '../Text';
 import { Props as ItemProps } from './WorkExperiencesItem';
 
@@ -16,25 +14,21 @@ const JobExperiences = ({ className, children }: Props) => {
   );
 
   return (
-    <Root className={className}>
+    <div className={className}>
       <Heading type="heading">🏢 WORK EXPERIENCE</Heading>
 
       <Items>{sortedChildren}</Items>
-    </Root>
+    </div>
   );
 };
 
-const Root = glamorous.div({});
+const Heading = styled(Text)`
+  margin-bottom: ${({ theme }) => theme.spacing.huge}px;
+`;
 
-const Heading = glamorous(Text)({ marginBottom: theme.spacing.huge });
-
-const Items = glamorous.ul({
-  ...flexibleLayoutContainer({
-    direction: 'column',
-    alignItems: 'flex-start',
-  }),
-  '& > *': { marginBottom: theme.spacing.huge },
-  '& > *:last-child': { marginBottom: 0 },
-});
+const Items = styled('ul')`
+  display: grid;
+  grid-gap: ${({ theme }) => theme.spacing.huge}px;
+`;
 
 export default JobExperiences;

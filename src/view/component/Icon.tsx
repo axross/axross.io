@@ -1,5 +1,5 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement } from 'react';
+import styled from '../../core/emotion';
 
 type Props = ClassAttributes<HTMLElement> & {
   size?: number;
@@ -206,4 +206,4 @@ export const CodeForUser = ({ size = 16, color, className }: Props) => (
   </Root>
 );
 
-const Root = glamorous.svg({});
+const Root = styled('svg')``;

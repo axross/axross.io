@@ -1,8 +1,6 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, ComponentType, createElement } from 'react';
-import theme from '../../../theme';
+import styled from '../../../core/emotion';
 import Expertise from '../../../entity/Expertise';
-import { gridLayoutContainer, gridLayoutItem } from '../../styleUtility/gridLayout';
 import { Css, Dart, Flutter, GraphQL, Html, JavaScript, Nodejs, React, TypeScript } from '../Icon';
 import Text from '../Text';
 
@@ -65,22 +63,21 @@ const ExpertisesItem = ({ expertise, className }: Props) => {
   );
 };
 
-const Root = glamorous.li({
-  ...gridLayoutContainer({
-    columns: ['1fr'],
-    rows: ['auto', 'auto'],
-    areas: [['icon'], ['name']],
-    justifyItems: 'center',
-  }),
-});
+const Root = styled('li')`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 'icon' 'name';
+  justify-items: center;
+`;
 
-const Icon = glamorous.svg({
-  ...gridLayoutItem('icon'),
-  marginBottom: theme.spacing.regular,
-});
+const Icon = styled('svg')`
+  grid-area: icon;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
+`;
 
-const Name = glamorous(Text)({
-  ...gridLayoutItem('name'),
-});
+const Name = styled(Text)`
+  grid-area: name;
+`;
 
 export default ExpertisesItem;

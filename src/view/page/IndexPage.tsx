@@ -1,9 +1,7 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement } from 'react';
+import styled from '../../core/emotion';
 import Expertise from '../../entity/Expertise';
 import WorkExperience from '../../entity/WorkExperience';
-import theme from '../../theme';
-import { gridLayoutContainer, gridLayoutItem } from '../styleUtility/gridLayout';
 import _Expertises, { ExpertisesItem } from '../component/Expertises';
 import _Skills, { SkillsItem } from '../component/Skills';
 import _WorkExperiences, { WorkExperiencesItem } from '../component/WorkExperiences';
@@ -24,11 +22,11 @@ const IndexPage = ({ expertises, introduction, workExperiences }: Props) => (
 
     <Introduction>{introduction}</Introduction>
 
-    <Expertises rows={5}>
+    <Expertises>
       {expertises.map(expertise => <ExpertisesItem expertise={expertise} key={expertise.type} />)}
     </Expertises>
 
-    <Skills rows={3}>
+    <Skills>
       <SkillsItem name="Both of *-side" icon={ClientAndServer}>
         We have to know well server-side to know client-side well, and vice versa. My specialty is client-side but I
         also have enough knowledge for server-side.
@@ -66,34 +64,39 @@ const IndexPage = ({ expertises, introduction, workExperiences }: Props) => (
   </Root>
 );
 
-const Root = glamorous.div({
-  ...gridLayoutContainer({
-    columns: ['1fr'],
-    rows: ['auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
-    areas: [['header'], ['introduction'], ['expertises'], ['skills'], ['workExperiences'], ['footer']],
-  }),
-  padding: '0 calc((100% - 960px)  / 2)',
-});
+const Root = styled('div')`
+  grid-template-columns: 1fr;
+  areas: 'header' 'introduction' 'expertises' 'skills' 'workExperiences' 'footer';
+  padding: 0 calc((100% - 960px) / 2);
+`;
 
-const Header = glamorous(_Header)(gridLayoutItem('header'));
+const Header = styled(_Header)`
+  grid-area: header;
+`;
 
-const Introduction = glamorous(_Introduction)({
-  ...gridLayoutItem('introduction'),
-  marginBottom: theme.spacing.enormous,
-});
+const Introduction = styled(_Introduction)`
+  grid-area: introduction;
+  margin-bottom: ${({ theme }) => theme.spacing.enormous}px;
+`;
 
-const Expertises = glamorous(_Expertises)({ ...gridLayoutItem('expertises'), marginBottom: theme.spacing.enormous });
+const Expertises = styled(_Expertises)`
+  grid-area: expertises;
+  margin-bottom: ${({ theme }) => theme.spacing.enormous}px;
+`;
 
-const Skills = glamorous(_Skills)({ ...gridLayoutItem('skills'), marginBottom: theme.spacing.enormous });
+const Skills = styled(_Skills)`
+  grid-area: skills;
+  margin-bottom: ${({ theme }) => theme.spacing.enormous}px;
+`;
 
-const WorkExperiences = glamorous(_WorkExperiences)({
-  ...gridLayoutItem('workExperiences'),
-  marginBottom: theme.spacing.enormous,
-});
+const WorkExperiences = styled(_WorkExperiences)`
+  grid-area: workExperiences;
+  margin-bottom: ${({ theme }) => theme.spacing.enormous}px;
+`;
 
-const Footer = glamorous(_Footer)({
-  ...gridLayoutItem('footer'),
-  margin: '80px 0 160px',
-});
+const Footer = styled(_Footer)`
+  grid-area: footer;
+  margin: ${({ theme }) => theme.spacing.regular * 5}px 0 ${({ theme }) => theme.spacing.regular * 10}px;
+`;
 
 export default IndexPage;

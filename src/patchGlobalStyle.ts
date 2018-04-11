@@ -1,15 +1,19 @@
-import { insertGlobal } from 'glamor';
+import { injectGlobal } from 'emotion';
+import Theme from './core/Theme';
 
-const patchGlobalStyle = () => {
-  insertGlobal('*', {
-    margin: 0,
-    padding: 0,
-    boxSizing: 'border-box',
-  });
+const patchGlobalStyle = (_: Theme) => {
+  injectGlobal`
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  insertGlobal('html, body', {
-    backgroundColor: '#3d5afe',
-  });
+    html,
+    body {
+      background-color: #3d5afe;
+    }
+  `;
 };
 
 export default patchGlobalStyle;

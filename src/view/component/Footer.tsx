@@ -1,5 +1,5 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement } from 'react';
+import styled from '../../core/emotion';
 import Text from './Text';
 
 type Props = ClassAttributes<HTMLElement> & {
@@ -7,15 +7,13 @@ type Props = ClassAttributes<HTMLElement> & {
 };
 
 const Footer = ({ className }: Props) => (
-  <Root className={className}>
+  <div className={className}>
     <Message type="heading">🙇 THANK YOU FOR READING!</Message>
-  </Root>
+  </div>
 );
 
-const Root = glamorous.div({});
-
-const Message = glamorous(Text)({
-  textAlign: 'center',
-});
+const Message = styled(Text)`
+  text-align: center;
+`;
 
 export default Footer;

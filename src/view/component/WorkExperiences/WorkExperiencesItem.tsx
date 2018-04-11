@@ -1,12 +1,9 @@
-import glamorous from 'glamorous';
 import { DateTime } from 'luxon';
 import { ClassAttributes, createElement } from 'react';
-import theme from '../../../theme';
+import styled from '../../../core/emotion';
 import WorkExperience from '../../../entity/WorkExperience';
-import { gridLayoutContainer, gridLayoutItem } from '../../styleUtility/gridLayout';
 import AspectRatioFixedImage from '../AspectRatioFixedImage';
 import Text from '../Text';
-import { flexibleLayoutContainer } from '../../styleUtility/flexibleLayout';
 
 export type Props = ClassAttributes<HTMLElement> & {
   workExperience: WorkExperience;
@@ -15,7 +12,7 @@ export type Props = ClassAttributes<HTMLElement> & {
 
 const WorkExperiencesItem = ({ workExperience, className }: Props) => (
   <Root className={className}>
-    <EmployeeThumbnailImage src={workExperience.employeeThumbnailImageUrl} aspectRatio={[1, 1]} width={80} />
+    <EmployeeThumbnailImage src={workExperience.employeeThumbnailImageUrl} aspectRatio={[1, 1]} width="80px" />
 
     <EmployeeName type="heading2">{workExperience.employeeName}</EmployeeName>
 
@@ -35,36 +32,42 @@ const WorkExperiencesItem = ({ workExperience, className }: Props) => (
   </Root>
 );
 
-const Root = glamorous.li({
-  ...gridLayoutContainer({
-    columns: ['80px', `${theme.spacing.regular}px`, '1fr'],
-    rows: ['auto', 'auto', 'auto'],
-    areas: [
-      ['employeeThumbnailImage', '.', 'employeeName'],
-      ['employeeThumbnailImage', '.', 'period'],
-      ['employeeThumbnailImage', '.', 'summary'],
-    ],
-  }),
-});
+const Root = styled('li')`
+  display: grid;
+  grid-template-columns: 80px ${({ theme }) => theme.spacing.regular}px 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    'employeeThumbnailImage . employeeName'
+    'employeeThumbnailImage . period'
+    'employeeThumbnailImage . summary';
+`;
 
-const EmployeeThumbnailImage = glamorous(AspectRatioFixedImage)(gridLayoutItem('employeeThumbnailImage'));
+const EmployeeThumbnailImage = styled(AspectRatioFixedImage)`
+  grid-area: employeeThumbnailImage;
+`;
 
-const EmployeeName = glamorous(Text)({ ...gridLayoutItem('employeeName'), marginBottom: theme.spacing.regular });
+const EmployeeName = styled(Text)`
+  grid-area: employeeName;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
+`;
 
-const Period = glamorous.div({
-  ...gridLayoutItem('period'),
-  ...flexibleLayoutContainer({
-    direction: 'row',
-  }),
-  marginBottom: theme.spacing.regular,
-});
+const Period = styled('div')`
+  grid-area: period;
+  display: flex;
+  direction: row;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
+`;
 
-const PeriodEnd = glamorous(Text)({ marginRight: theme.spacing.small });
+const PeriodEnd = styled(Text)`
+  margin-right: ${({ theme }) => theme.spacing.small}px;
+`;
 
 const Dash = PeriodEnd;
 
-const PeriodStart = glamorous(Text)();
+const PeriodStart = Text;
 
-const Summary = glamorous(Text)(gridLayoutItem('summary'));
+const Summary = styled(Text)`
+  grid-area: summary;
+`;
 
 export default WorkExperiencesItem;

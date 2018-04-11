@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement, MouseEventHandler } from 'react';
 
 type Props = ClassAttributes<HTMLElement> & {
@@ -9,13 +8,11 @@ type Props = ClassAttributes<HTMLElement> & {
 };
 
 const Counter = ({ count, onClickIncrement, onClickDecrement, className }: Props) => (
-  <Root className={className}>
+  <div className={className}>
     count: {count}
     <button onClick={onClickIncrement}>increment</button>
     <button onClick={onClickDecrement}>decrement</button>
-  </Root>
+  </div>
 );
-
-const Root = glamorous.div({});
 
 export default Counter;

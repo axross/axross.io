@@ -4,6 +4,7 @@ import { hydrate, render } from 'react-dom';
 import { Store } from 'repatch';
 import State from './core/State';
 import initialState from './initialState';
+import theme from './theme';
 import Root from './Root';
 import patchGlobalStyle from './patchGlobalStyle';
 
@@ -14,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let isRendered = false;
   const container = document.getElementById('app');
   const update = (state: State) => {
-    const element = createElement(Root, { history, store, state });
+    const element = createElement(Root, { history, store, state, theme });
 
     if (!isRendered) {
       isRendered = true;
@@ -30,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   store.subscribe(() => update(store.getState()));
   history.listen(() => update(store.getState()));
 
-  patchGlobalStyle();
+  patchGlobalStyle(theme);
 
   update(store.getState());
 });

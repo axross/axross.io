@@ -1,9 +1,6 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, ComponentType, createElement } from 'react';
-import theme from '../../../theme';
-import { gridLayoutContainer, gridLayoutItem } from '../../styleUtility/gridLayout';
+import styled from '../../../core/emotion';
 import Text from '../Text';
-import { flexibleLayoutContainer } from '../../styleUtility/flexibleLayout';
 
 export type Props = ClassAttributes<HTMLElement> & {
   icon: ComponentType<any>;
@@ -24,37 +21,35 @@ const PrinciplesItem = ({ icon, name, children, className }: Props) => (
   </Root>
 );
 
-const Root = glamorous.li({
-  ...gridLayoutContainer({
-    columns: ['1fr'],
-    rows: ['auto', 'auto'],
-    areas: [['icon'], ['name'], ['summary']],
-    justifyItems: 'center',
-  }),
-});
+const Root = styled('div')`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: 'icon' 'name' 'summary';
+  justify-items: center;
+`;
 
-const Visual = glamorous.div({
-  ...gridLayoutItem('icon'),
-  ...flexibleLayoutContainer({
-    alignItems: 'center',
-    justifyContent: 'center',
-  }),
-  width: 96,
-  height: 96,
-  marginBottom: theme.spacing.large,
-  background: '#fff',
-  borderRadius: '50%',
-});
+const Visual = styled('div')`
+  grid-area: icon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: ${({ theme }) => theme.spacing.large}px;
+  background: #fff;
+  border-radius: 50%;
+`;
 
-const Icon = glamorous.svg({});
+const Icon = styled('svg')``;
 
-const Name = glamorous(Text)({
-  ...gridLayoutItem('name'),
-  marginBottom: theme.spacing.regular,
-});
+const Name = styled(Text)`
+  grid-area: name;
+  margin-bottom: ${({ theme }) => theme.spacing.regular}px;
+`;
 
-const Summary = glamorous(Text)({
-  ...gridLayoutItem('summary'),
-});
+const Summary = styled(Text)`
+  grid-area: summary;
+`;
 
 export default PrinciplesItem;

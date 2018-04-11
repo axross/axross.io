@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import { ClassAttributes, createElement, ReactNode } from 'react';
 import Text from './Text';
 
@@ -8,11 +7,9 @@ type Props = ClassAttributes<HTMLElement> & {
 };
 
 const Introduction = ({ className, children }: Props) => (
-  <Root type="body1" sentence className={className}>
+  <Text type="body1" sentence className={className}>
     {children}
-  </Root>
+  </Text>
 );
-
-const Root = glamorous(Text)({});
 
 export default Introduction;

@@ -1,37 +1,35 @@
-import glamorous from 'glamorous';
+import { ThemeProvider } from 'emotion-theming';
 import { History } from 'history';
 import { ClassAttributes, createElement } from 'react';
 import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
 import { Dependency } from './dependency';
 import State, { Store } from './core/State';
+import Theme from './core/Theme';
 import IndexPage from './view/connected/IndexPage';
 
 type Props = ClassAttributes<HTMLElement> & {
   history: History;
   store: Store;
   state: State;
+  theme: Theme;
   className?: string;
 };
 
-const Root = ({ history, store, state, className }: Props) => (
+const Root = ({ history, store, state, theme, className }: Props) => (
   <Router history={history}>
-    <Broadcast channel="dependency" value={{ store } as Dependency}>
-      <Broadcast channel="state" value={state}>
-        <_Root className={className}>
-          <PageContent>
+    <ThemeProvider theme={theme}>
+      <Broadcast channel="dependency" value={{ store } as Dependency}>
+        <Broadcast channel="state" value={state}>
+          <div className={className}>
             <Switch>
               <Route path="/" component={IndexPage} />
             </Switch>
-          </PageContent>
-        </_Root>
+          </div>
+        </Broadcast>
       </Broadcast>
-    </Broadcast>
+    </ThemeProvider>
   </Router>
 );
-
-const _Root = glamorous.div({});
-
-const PageContent = glamorous.div({});
 
 export default Root;
