@@ -1,14 +1,6 @@
-// type Theme = {
-//   spacing: {
-//     small: number;
-//     regular: number;
-//     large: number;
-//     huge: number;
-//     enormous: number;
-//   };
-// };
+import Theme from './core/Theme';
 
-const theme = {
+const theme: Theme = {
   spacing: {
     small: 8,
     regular: 16,
