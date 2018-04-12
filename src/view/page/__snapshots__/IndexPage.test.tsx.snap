@@ -70,8 +70,8 @@ exports[`<IndexPage> it matches with the previous snapshot 1`] = `
           "compare": [Function],
           "employeeName": "Eighty Three, Inc.",
           "employeeThumbnailImageUrl": "https://eighty-three.co.jp/",
-          "endedAt": "1970-01-01T09:00:00.000+09:00",
-          "startedAt": "1970-01-01T09:00:00.000+09:00",
+          "endedAt": "1970-01-01T00:00:00.000Z",
+          "startedAt": "1970-01-01T00:00:00.000Z",
           "summary": "Yeah",
         }
       }
