@@ -1,0 +1,12 @@
+languageCode = "en-us"
+title = "axross.io"
+baseURL = "https://axross.io/"
+theme = "ax"
+enableRobotsTXT = true
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "This is axross's website."
+  author = "axross"

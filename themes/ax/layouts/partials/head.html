@@ -1,0 +1,33 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name=author content="{{ .Site.Params.author }}" />
+  <meta name=description content="{{ if .IsPage }}{{ .Summary | truncate 200 " ..." }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta name=keywords content="{{ range .Params.tags }}{{ . }}, {{ end }}" />
+  <meta property="author" content="{{ .Site.Params.author }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="{{.Site.Title}}" />
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:url" content="{{ .URL | absURL }}" />
+  <meta property="og:image" content="{{ "/image/ogp.png" | absURL }}" />
+  <meta property="og:description" content="{{ if .IsPage }}{{ .Summary | truncate 200 " ..." }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@axross_">
+  <meta name="twitter:creator" content="@axross_">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ if .IsPage }}{{ .Summary | truncate 200 " ..." }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="twitter:image:src" content="{{ "/image/ogp.png" | absURL }}">
+  <meta name="twitter:image:alt" content="{{ .Title }}">
+  <meta name="twitter:domain" content="axross.io">
+  <link rel="canonical" href="{{ .URL | absURL }}">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css">
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/prism.js" defer></script>
+  <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+</head>

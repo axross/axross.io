@@ -1,0 +1,58 @@
+<header class="header">
+  <a class="header__inner" href="/">
+    <img class="header__inner__logo" src="/image/logo.jpg" alt="axross.io">
+
+    <div class="header__inner__body">
+      <h1 class="header__inner__body__title">
+        axross.io
+      </h1>
+
+      <div class="header__inner__body__description">
+        Write some codes for end-users.
+      </div>
+    </div>
+  </a>
+
+  <style>
+    .header {
+      width: 280px;
+      margin: 2.4rem auto;
+    }
+
+    .header__inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      color: inherit;
+    }
+
+    .header__inner:hover {
+      text-decoration: none;
+    }
+
+    .header__inner__logo {
+      width: 64px;
+      height: 64px;
+      margin-right: 16px;
+      border-radius: 50%;
+    }
+
+    .header__inner__body__title {
+      font-size: 1rem;
+    }
+
+    .header__inner__body__description {
+      color: var(--sub-text-color);
+      font-size: 0.666rem;
+      font-family: 'Fira Code';
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        width: calc(100% - 32px);
+        margin: 32px auto;
+      }
+    }
+  </style>
+</header>

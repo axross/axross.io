@@ -1,0 +1,106 @@
+<article class="post">
+  <h1 class="post__title">
+    {{ .Title }}
+  </h1>
+
+  <aside class="post__meta">
+    <span class="post__meta__date">
+      Posted on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    </span>
+
+    <ul class="post__meta__tags">
+      {{ range .Params.tags }}
+        <li class="post__meta__tags__item">
+          <a href="/tags/{{ . | urlize }}">#{{ . }}</a>,
+        </li>
+      {{ end }}
+    </ul>
+  </aside>
+
+  {{ partial "post-content.html" . }}
+
+  <hr class="post__horizontal-line">
+
+  <aside class="post__contribute">
+    Feel free to comment on <a href="https://github.com/axross/axross.io/blob/master/content/{{ .File.Path }}">GitHub</a> if you have an opinion or find some mistakes about this post.
+  </aside>
+
+  <style>
+    .post {
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    .post__title {
+      line-height: 3rem;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .post__meta__date {
+      display: inline-block;
+      margin-right: 0.333rem;
+      color: #9B9FA3;
+    }
+
+    .post__meta__tags {
+      display: inline-block;
+    }
+
+    .post__meta__tags__item {
+      display: inline-block;
+      margin-right: 0.333rem;
+    }
+
+    .post__meta__tags__item:last-child {
+      margin-right: 0;
+    }
+
+    .post__horizontal-line {
+      margin: 1.8rem 0;
+      border: 0;
+      border-bottom: 1px #dfdfdf solid;
+    }
+
+    .post__contribute {
+      margin: 1.5rem 0;
+      font-size: 0.8rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id":"{{ .Site.BaseURL }}"
+      },
+      "headline": "{{ .Title }} - {{ .Site.Title }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ "/image/ogp.png" | absURL }}",
+        "height": 1200,
+        "width": 628
+      },
+      "datePublished": "${this.created_at}",
+      "dateModified": "${this.updated_at}",
+      "author": {
+        "@type": "Person",
+        "name": "axross",
+        "image": "{{ "/image/axross.jpg" | absURL }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "axross",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ "/image/axross.jpg" | absURL }}",
+          "height": 256,
+          "width": 256
+        }
+      },
+      "description": "{{ .Summary | truncate 200 " ..." }}"
+    }
+  </script>
+</article>

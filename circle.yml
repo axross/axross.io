@@ -1,0 +1,14 @@
+machine:
+  node:
+    version: 7.4.0
+  post:
+    - wget https://github.com/spf13/hugo/releases/download/v0.19/hugo_0.19_Linux-64bit.tar.gz
+    - tar -xzf hugo_0.19_Linux-64bit.tar.gz
+    - sudo mv hugo_0.19_linux_amd64/hugo_0.19_linux_amd64 /usr/local/bin/hugo
+    - npm install --global firebase-tools
+deployment:
+  latest:
+    branch: master
+    commands:
+      - hugo
+      - firebase --project axross-io --token $FIREBASE_TOKEN deploy

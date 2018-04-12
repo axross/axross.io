@@ -1,0 +1,52 @@
+:root {
+  --main-text-color: #303133;
+  --sub-text-color: #A0A4A8;
+  --main-link-color: #0065c1;
+
+  font-size: 18px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--main-link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  font-family: 'Noto Sans', 'Noto Sans Japanese';
+  font-feature-settings: "liga" 1;
+  color: var(--main-text-color);
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    width: 100%;
+    min-width: 320px;
+    padding: 0 16px;
+  }
+}

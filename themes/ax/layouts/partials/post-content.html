@@ -1,0 +1,147 @@
+<section class="post-content">
+  {{ .Content }}
+
+  <style>
+    .post-content {
+      line-height: 1.75;
+    }
+
+    .post-content * {
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+    .post-content p,
+    .post-content blockquote,
+    .post-content pre,
+    .post-content ul,
+    .post-content ol,
+    .post-content img,
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+      max-width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+      line-height: 1.5;
+    }
+
+    .post-content h1 {
+      font-size: 1.5rem;
+    }
+
+    .post-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .post-content h3 {
+      font-size: 1.35rem;
+    }
+
+    .post-content h4 {
+      font-size: 1.2rem;
+    }
+
+    .post-content blockquote {
+      border-top: 1px #dfdfdf solid;
+      border-bottom: 1px #dfdfdf solid;
+      font-style: italic;
+    }
+
+    .post-content hr {
+      border: 0;
+      border-bottom: 1px #dfdfdf solid;
+    }
+
+    .post-content ul,
+    .post-content ol {
+      padding-left: 2rem;
+    }
+
+    .post-content li > ul,
+    .post-content li > ol {
+      margin: 0;
+    }
+
+    .post-content li {
+      position: relative;
+      margin: 0.4rem 0;
+    }
+
+    .post-content ul > li:before {
+      position: absolute;
+      left: -1.6rem;
+      content: '->';
+      font-family: 'Fira Code';
+    }
+
+    .post-content li p {
+      margin: 0;
+    }
+
+    .post-content code {
+      font-size: 0.8rem;
+      font-family: 'Fira Code';
+    }
+
+    .post-content :not(pre) > code {
+      display: inline-block;
+      padding: 0 6px;
+      background-color: #f3f3f3;
+      border-radius: 2px;
+    }
+
+    .post-content pre {
+      line-height: 1.25;
+      padding: 1rem;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+      overflow-x: scroll;
+    }
+
+    .post-content table thead {
+      padding-bottom: 16px;
+    }
+
+    .post-content table thead tr th {
+      line-height: 1.5;
+      padding: 0 8px 16px;
+      border-bottom: 1px #dfdfdf solid;
+      font-size: 14px;
+      color: #ABB4BB
+    }
+
+    .post-content table thead tr th:first-child {
+      padding-left: 16px;
+    }
+
+    .post-content table thead tr th:last-child {
+      padding-right: 16px;
+    }
+
+    .post-content table tbody tr td {
+      line-height: 1.5;
+      padding: 8px 16px;
+      border-bottom: 1px #dfdfdf solid;
+      font-size: 16px;
+    }
+
+    .post-content table tbody tr td:first-child {
+      padding-left: 16px;
+    }
+
+    .post-content table tbody tr td:last-child {
+      padding-right: 16px;
+    }
+  </style>
+</section>

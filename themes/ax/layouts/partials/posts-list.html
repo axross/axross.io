@@ -1,0 +1,60 @@
+<section class="posts-list">
+  <h1 class="posts-list__title">
+    Posts
+  </h1>
+
+  <ul class="posts-list__list">
+    {{ range where .Data.Pages "Section" "posts" }}
+      <li class="posts-list__list__item">
+        <span class="posts-list__list__item__date">
+          {{ .Date.Format "2006-01-02" }}
+        </span>
+
+        <h2 class="posts-list__list__item__title">
+          <a href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        </h2>
+      </li>
+    {{ end }}
+  </ul>
+
+  <style scoped>
+    .posts-list {
+      width: 100%;
+      margin: 1.6rem auto;
+    }
+
+    .posts-list__title {
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .posts-list__list__item {
+      display: flex;
+      margin-bottom: 8px;
+    }
+
+    .posts-list__list__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .posts-list__list__item__date {
+      display: inline-block;
+      margin-right: 16px;
+      color: #9B9FA3;
+    }
+
+    .posts-list__list__item__title {
+      display: inline-block;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .posts-list {
+        width: calc(100% - 32px);
+      }
+    }
+  </style>
+</section>
