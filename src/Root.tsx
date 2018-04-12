@@ -3,7 +3,7 @@ import { History } from 'history';
 import { ClassAttributes, createElement } from 'react';
 import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
-import Dependency from './core/dependency';
+import Dependency from './core/Dependency';
 import State from './core/State';
 import Theme from './core/Theme';
 import IndexPage from './view/connected/IndexPage';
