@@ -3,23 +3,23 @@ import { History } from 'history';
 import { ClassAttributes, createElement } from 'react';
 import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
-import { Dependency } from './dependency';
-import State, { Store } from './core/State';
+import Dependency from './core/dependency';
+import State from './core/State';
 import Theme from './core/Theme';
 import IndexPage from './view/connected/IndexPage';
 
 type Props = ClassAttributes<HTMLElement> & {
+  dependency: Dependency;
   history: History;
-  store: Store;
   state: State;
   theme: Theme;
   className?: string;
 };
 
-const Root = ({ history, store, state, theme, className }: Props) => (
+const Root = ({ history, dependency, state, theme, className }: Props) => (
   <Router history={history}>
     <ThemeProvider theme={theme}>
-      <Broadcast channel="dependency" value={{ store } as Dependency}>
+      <Broadcast channel="dependency" value={dependency}>
         <Broadcast channel="state" value={state}>
           <div className={className}>
             <Switch>

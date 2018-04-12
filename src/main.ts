@@ -10,12 +10,13 @@ import patchGlobalStyle from './patchGlobalStyle';
 
 window.addEventListener('DOMContentLoaded', () => {
   const history = createBrowserHistory();
-  const store = new Store<State>(initialState);
+  const store = new Store<State>({ ...initialState });
+  const dependency = { store };
 
   let isRendered = false;
   const container = document.getElementById('app');
   const update = (state: State) => {
-    const element = createElement(Root, { history, store, state, theme });
+    const element = createElement(Root, { history, dependency, state, theme });
 
     if (!isRendered) {
       isRendered = true;
