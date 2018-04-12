@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Document',
+      title: 'axross.io',
       template: './src/index.html',
       hash: true,
       config,
