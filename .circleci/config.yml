@@ -55,8 +55,8 @@ jobs:
   build-production:
     <<: *default_setting
     environment:
-      FIREBASE_API_KEY: $LATEST_FIREBASE_API_KEY
-      FIREBASE_PROJECT_ID: $LATEST_FIREBASE_PROJECT_ID
+      FIREBASE_API_KEY: $PRODUCTION_FIREBASE_API_KEY
+      FIREBASE_PROJECT_ID: $PRODUCTION_FIREBASE_PROJECT_ID
     steps:
       - attach_workspace:
           at: ~/repo
@@ -83,7 +83,7 @@ jobs:
       - run:
           command: |
             npm i firebase-tools
-            ./node_modules/.bin/firebase deploy --only hosting --token "${FIREBASE_AUTH_TOKEN}" --project axross-io-dev
+            ./node_modules/.bin/firebase deploy --only hosting --token "${FIREBASE_AUTH_TOKEN}" --project axross-io
 workflows:
   version: 2
   build-and-deploy:
