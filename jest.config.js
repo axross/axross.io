@@ -4,9 +4,6 @@ module.exports = {
   },
   testRegex: 'test\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'json', 'js', 'jsx'],
-  setupFiles: [
-    // "raf/polyfill",
-    './testSetup.js',
-  ],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
+  setupFiles: ['./testSetup.js'],
+  snapshotSerializers: ['enzyme-to-json/serializer', './emotion-serializer'],
 };

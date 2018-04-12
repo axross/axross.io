@@ -18,14 +18,14 @@ const AspectRatioFixedImage = ({
   height = 'auto',
   className,
 }: ClassAttributes<HTMLElement> & Props) => (
-  <Root width={width} height={height} className={className}>
+  <Root _width={width} _height={height} className={className}>
     <Inner src={src} aspectRatio={aspectRatio} />
   </Root>
 );
 
-const Root = styled<{ width: string; height: string }, 'div'>('div')`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+const Root = styled<{ _width: string; _height: string }, 'div'>('div')`
+  width: ${({ _width }) => _width};
+  height: ${({ _height }) => _height};
 `;
 
 const Inner = styled<{ src: string; aspectRatio: AspectRatio }, 'div'>('div')`
