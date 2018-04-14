@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text> it matches with the previous snapshot (props.sentence=true) 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1.5;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="body1") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="body2") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading1") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading2") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading2", props.sentence=true) 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1.5;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading3") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 45px;
+  font-weight: 900;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading4") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 56px;
+  font-weight: 900;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="heading5") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 112px;
+  font-weight: 900;
+}
+
+<span
+  class="emotion-0"
+>
+  text
+</span>
+`;

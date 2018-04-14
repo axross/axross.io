@@ -58,7 +58,7 @@ const ExpertisesItem = ({ expertise, className }: Props) => {
     <Root className={className}>
       {createElement(Icon.withComponent(icon), { size: 80 } as any)}
 
-      <Name type="body2">{name}</Name>
+      <Name>{name}</Name>
     </Root>
   );
 };

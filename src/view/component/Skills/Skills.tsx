@@ -10,7 +10,7 @@ type Props = ClassAttributes<HTMLElement> & {
 
 const Principles = ({ className, children }: Props) => (
   <div className={className}>
-    <Heading type="heading">🎨 SKILLS AND ATTITUDE</Heading>
+    <Heading type="heading3">🎨 SKILLS AND ATTITUDE</Heading>
 
     <Items>{children}</Items>
   </div>

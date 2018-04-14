@@ -8,9 +8,9 @@ type Props = ClassAttributes<HTMLElement> & {
 
 const Header = ({ className }: Props) => (
   <Root className={className}>
-    <Name type="name">@AXROSS</Name>
+    <Name type="heading5">@AXROSS</Name>
 
-    <Title type="title">👨‍💻 Frontend Developer</Title>
+    <Title type="heading4">👨‍💻 Frontend Developer</Title>
   </Root>
 );
 

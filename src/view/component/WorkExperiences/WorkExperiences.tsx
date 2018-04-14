@@ -15,7 +15,7 @@ const JobExperiences = ({ className, children }: Props) => {
 
   return (
     <div className={className}>
-      <Heading type="heading">🏢 WORK EXPERIENCE</Heading>
+      <Heading type="heading3">🏢 WORK EXPERIENCE</Heading>
 
       <Items>{sortedChildren}</Items>
     </div>

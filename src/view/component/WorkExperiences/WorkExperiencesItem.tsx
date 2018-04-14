@@ -17,18 +17,16 @@ const WorkExperiencesItem = ({ workExperience, className }: Props) => (
     <EmployeeName type="heading2">{workExperience.employeeName}</EmployeeName>
 
     <Period>
-      <PeriodEnd type="sub">
+      <PeriodEnd type="body2">
         {workExperience.endedAt === null ? 'Still Working' : workExperience.endedAt.toLocaleString(DateTime.DATE_FULL)}
       </PeriodEnd>
 
-      <Dash type="sub">−</Dash>
+      <Dash type="body2">−</Dash>
 
-      <PeriodStart type="sub">{workExperience.startedAt.toLocaleString(DateTime.DATE_FULL)}</PeriodStart>
+      <PeriodStart type="body2">{workExperience.startedAt.toLocaleString(DateTime.DATE_FULL)}</PeriodStart>
     </Period>
 
-    <Summary type="body2" sentence>
-      {workExperience.summary}
-    </Summary>
+    <Summary sentence>{workExperience.summary}</Summary>
   </Root>
 );
 

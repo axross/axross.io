@@ -15,9 +15,7 @@ const PrinciplesItem = ({ icon, name, children, className }: Props) => (
 
     <Name type="heading2">{name}</Name>
 
-    <Summary type="body2" sentence>
-      {children}
-    </Summary>
+    <Summary sentence>{children}</Summary>
   </Root>
 );
 
