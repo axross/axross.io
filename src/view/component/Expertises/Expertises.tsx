@@ -1,5 +1,6 @@
 import { ClassAttributes, createElement, ReactElement } from 'react';
 import styled from '../../../core/emotion';
+import grid from '../../style/grid';
 import Text from '../Text';
 import { Props as ItemProps } from './ExpertisesItem';
 
@@ -21,9 +22,7 @@ const Heading = styled(Text)`
 `;
 
 const Items = styled('ul')`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: ${({ theme }) => theme.spacing.huge}px;
+  ${grid({ columns: 3, gap: 'huge' })};  
 `;
 
 export default Expertises;
