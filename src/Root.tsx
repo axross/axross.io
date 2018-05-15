@@ -1,12 +1,13 @@
 import { ThemeProvider } from 'emotion-theming';
 import { History } from 'history';
 import { ClassAttributes, createElement } from 'react';
-import { Broadcast } from 'react-broadcast';
 import { Route, Router, Switch } from 'react-router';
 import Dependency from './core/Dependency';
 import State from './core/State';
 import Theme from './core/Theme';
 import IndexPage from './view/connected/IndexPage';
+import { Provider as DependencyProvider } from './view/context/dependency';
+import { Provider as StateProvider } from './view/context/state';
 
 type Props = ClassAttributes<HTMLElement> & {
   dependency: Dependency;
@@ -19,15 +20,15 @@ type Props = ClassAttributes<HTMLElement> & {
 const Root = ({ history, dependency, state, theme, className }: Props) => (
   <Router history={history}>
     <ThemeProvider theme={theme}>
-      <Broadcast channel="dependency" value={dependency}>
-        <Broadcast channel="state" value={state}>
+      <DependencyProvider value={dependency}>
+        <StateProvider value={state}>
           <div className={className}>
             <Switch>
               <Route path="/" component={IndexPage} />
             </Switch>
           </div>
-        </Broadcast>
-      </Broadcast>
+        </StateProvider>
+      </DependencyProvider>
     </ThemeProvider>
   </Router>
 );

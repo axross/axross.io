@@ -1,18 +1,17 @@
 import { createElement } from 'react';
-import { Subscriber } from 'react-broadcast';
-import State from '../../core/State';
 import IndexPage from '../page/IndexPage';
+import { Consumer as StateConsumer } from '../context/state';
 
 const Connected = () => (
-  <Subscriber channel="state">
-    {(state: State) => (
+  <StateConsumer>
+    {state => (
       <IndexPage
         expertises={state.expertises}
         introduction={state.introduction}
         workExperiences={state.workExperiences}
       />
     )}
-  </Subscriber>
+  </StateConsumer>
 );
 
 export default Connected;

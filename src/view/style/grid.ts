@@ -1,8 +1,8 @@
 import { css } from 'react-emotion';
-import { CSSLength } from 'react';
-import Theme, { Spacing } from '../../core/Theme';
+import Theme from '../../core/Theme';
 
-type Gap = keyof Spacing | CSSLength;
+type SpacingVariant = keyof Theme['spacing'];
+type Gap = SpacingVariant | number | string;
 
 const grid = ({ columns, gap }: { columns: number; gap: Gap }) => ({ theme }: { theme: Theme }) => css`
   display: grid;
