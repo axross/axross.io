@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer> it matches with the previous snapshot 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 45px;
+  font-weight: 900;
+  text-align: center;
+}
+
+<div
+  className="rome"
+>
+  <span
+    className="emotion-0"
+  >
+    🙇 THANK YOU FOR READING!
+  </span>
+</div>
+`;

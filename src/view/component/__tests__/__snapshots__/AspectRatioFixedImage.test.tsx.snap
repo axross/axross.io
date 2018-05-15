@@ -15,10 +15,10 @@ exports[`<AspectRatioFixedImage> it matches with the previous snapshot 1`] = `
 }
 
 <div
-  class="emotion-1"
+  className="emotion-1"
 >
   <div
-    class="emotion-0"
+    className="emotion-0"
     src="https://loremflickr.com/320/240"
   />
 </div>

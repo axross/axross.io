@@ -5,5 +5,5 @@ module.exports = {
   testRegex: 'test\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'json', 'js', 'jsx'],
   setupFiles: ['./testSetup.js'],
-  snapshotSerializers: ['enzyme-to-json/serializer', './emotion-serializer'],
+  snapshotSerializers: ['./emotion-serializer'],
 };

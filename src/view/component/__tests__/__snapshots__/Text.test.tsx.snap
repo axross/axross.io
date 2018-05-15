@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Text> it matches with the previous snapshot (props.sentence=true) 1`] = `
-.emotion-0 {
-  display: block;
-  line-height: 1.5;
-  color: #fff;
-  font-family: Montserrat;
-  -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-<span
-  class="emotion-0"
->
-  text
-</span>
-`;
-
 exports[`<Text> it matches with the previous snapshot (props.type="body1") 1`] = `
 .emotion-0 {
   display: block;
@@ -30,7 +12,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="body1") 1`] =
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -48,7 +30,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="body2") 1`] =
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -66,7 +48,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading1") 1`
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -84,7 +66,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading2") 1`
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -102,7 +84,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading2", pr
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -120,7 +102,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading3") 1`
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -138,7 +120,7 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading4") 1`
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
 >
   text
 </span>
@@ -156,7 +138,25 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading5") 1`
 }
 
 <span
-  class="emotion-0"
+  className="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type=undefined) 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+<span
+  className="emotion-0"
 >
   text
 </span>

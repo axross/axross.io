@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Introduction> it matches with the previous snapshot 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1.5;
+  color: #fff;
+  font-family: Montserrat;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+<span
+  className="berlin emotion-0"
+>
+  text
+</span>
+`;
