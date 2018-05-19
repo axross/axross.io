@@ -1,21 +1,21 @@
-import { ClassAttributes, ComponentType, createElement } from 'react';
+import { ClassAttributes, createElement } from 'react';
 import styled from '../../../core/emotion';
+import Attitude from '../../../entity/Attitude';
+import AttitudeIcon from '../AttitudeIcon';
 import Text from '../Text';
 
 export type Props = ClassAttributes<HTMLElement> & {
-  icon: ComponentType<any>;
-  name: string;
+  attitude: Attitude;
   className?: string;
-  children: string;
 };
 
-const PrinciplesItem = ({ icon, name, children, className }: Props) => (
+const AttitudesItem = ({ attitude, className }: Props) => (
   <Root className={className}>
-    <Visual>{createElement(Icon.withComponent(icon), { size: 64, color: '#3d5afe' } as any)}</Visual>
+    <Visual>{<AttitudeIcon type={attitude.iconType} size={64} color="#3d5afe" />}</Visual>
 
-    <Name type="heading2">{name}</Name>
+    <Name type="headline5">{attitude.name}</Name>
 
-    <Summary sentence>{children}</Summary>
+    <Summary sentence>{attitude.description}</Summary>
   </Root>
 );
 
@@ -50,4 +50,4 @@ const Summary = styled(Text)`
   grid-area: summary;
 `;
 
-export default PrinciplesItem;
+export default AttitudesItem;

@@ -17,10 +17,11 @@ exports[`<Header> it matches with the previous snapshot 1`] = `
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 112px;
-  font-weight: 900;
+  font-size: 96px;
+  font-weight: 700;
+  font-style: normal;
   grid-area: name;
   margin-bottom: 16px;
 }
@@ -29,12 +30,12 @@ exports[`<Header> it matches with the previous snapshot 1`] = `
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 56px;
-  font-weight: 900;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: normal;
   grid-area: title;
-  opacity: 0.5;
 }
 
 <header
@@ -43,12 +44,12 @@ exports[`<Header> it matches with the previous snapshot 1`] = `
   <span
     className="emotion-0"
   >
-    @AXROSS
+    MITCH GRASSI
   </span>
   <span
     className="emotion-1"
   >
-    👨‍💻 Frontend Developer
+    tenor lead and backing vocals
   </span>
 </header>
 `;

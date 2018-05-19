@@ -8,7 +8,7 @@ type Props = ClassAttributes<HTMLElement> & {
 
 const Footer = ({ className }: Props) => (
   <div className={className}>
-    <Message type="heading3">🙇 THANK YOU FOR READING!</Message>
+    <Message type="headline3">🙇 THANK YOU FOR READING!</Message>
   </div>
 );
 

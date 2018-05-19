@@ -1,7 +1,7 @@
-import { ClassAttributes, ComponentType, createElement } from 'react';
+import { ClassAttributes, createElement } from 'react';
 import styled from '../../../core/emotion';
 import Expertise from '../../../entity/Expertise';
-import { Css, Dart, Flutter, GraphQL, Html, JavaScript, Nodejs, React, TypeScript } from '../Icon';
+import ExpertiseIcon from '../ExpertiseIcon';
 import Text from '../Text';
 
 export type Props = ClassAttributes<HTMLElement> & {
@@ -9,59 +9,13 @@ export type Props = ClassAttributes<HTMLElement> & {
   className?: string;
 };
 
-const ExpertisesItem = ({ expertise, className }: Props) => {
-  let icon: ComponentType<any>;
-  let name: string;
+const ExpertisesItem = ({ expertise, className }: Props) => (
+  <Root className={className}>
+    <Icon type={expertise.iconType} size={80} />
 
-  switch (expertise.type) {
-    case 'HTML':
-      icon = Html;
-      name = 'HTML';
-      break;
-    case 'CSS':
-      icon = Css;
-      name = 'CSS';
-      break;
-    case 'JAVASCRIPT':
-      icon = JavaScript;
-      name = 'JavaScript';
-      break;
-    case 'TYPESCRIPT':
-      icon = TypeScript;
-      name = 'TypeScript';
-      break;
-    case 'DART':
-      icon = Dart;
-      name = 'Dart';
-      break;
-    case 'NODEJS':
-      icon = Nodejs;
-      name = 'Node.js';
-      break;
-    case 'REACT':
-      icon = React;
-      name = 'React';
-      break;
-    case 'GRAPHQL':
-      icon = GraphQL;
-      name = 'GraphQL';
-      break;
-    case 'FLUTTER':
-      icon = Flutter;
-      name = 'Flutter';
-      break;
-    default:
-      throw new Error();
-  }
-
-  return (
-    <Root className={className}>
-      {createElement(Icon.withComponent(icon), { size: 80 } as any)}
-
-      <Name>{name}</Name>
-    </Root>
-  );
-};
+    <Name type="headline6">{expertise.name}</Name>
+  </Root>
+);
 
 const Root = styled('li')`
   display: grid;
@@ -71,7 +25,7 @@ const Root = styled('li')`
   justify-items: center;
 `;
 
-const Icon = styled('svg')`
+const Icon = styled(ExpertiseIcon)`
   grid-area: icon;
   margin-bottom: ${({ theme }) => theme.spacing.regular}px;
 `;

@@ -5,10 +5,11 @@ exports[`<Footer> it matches with the previous snapshot 1`] = `
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 45px;
-  font-weight: 900;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: normal;
   text-align: center;
 }
 

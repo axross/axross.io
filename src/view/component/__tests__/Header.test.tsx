@@ -8,7 +8,7 @@ describe('<Header>', () => {
   test('it matches with the previous snapshot', () => {
     const renderer = create(
       <ThemeProvider theme={theme}>
-        <Header className="amsterdam" />
+        <Header name="Mitch Grassi" title="tenor lead and backing vocals" className="amsterdam" />
       </ThemeProvider>,
     );
 

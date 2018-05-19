@@ -7,7 +7,7 @@ type Props = ClassAttributes<HTMLElement> & {
 };
 
 const Introduction = ({ className, children }: Props) => (
-  <Text type="body1" sentence className={className}>
+  <Text sentence className={className}>
     {children}
   </Text>
 );

@@ -5,10 +5,11 @@ exports[`<Text> it matches with the previous snapshot (props.type="body1") 1`] =
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   font-weight: 400;
+  font-style: normal;
 }
 
 <span
@@ -23,10 +24,11 @@ exports[`<Text> it matches with the previous snapshot (props.type="body2") 1`] =
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   font-weight: 400;
+  font-style: normal;
 }
 
 <span
@@ -36,15 +38,16 @@ exports[`<Text> it matches with the previous snapshot (props.type="body2") 1`] =
 </span>
 `;
 
-exports[`<Text> it matches with the previous snapshot (props.type="heading1") 1`] = `
+exports[`<Text> it matches with the previous snapshot (props.type="headline1") 1`] = `
 .emotion-0 {
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 96px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 <span
@@ -54,15 +57,16 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading1") 1`
 </span>
 `;
 
-exports[`<Text> it matches with the previous snapshot (props.type="heading2") 1`] = `
+exports[`<Text> it matches with the previous snapshot (props.type="headline2") 1`] = `
 .emotion-0 {
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 60px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 <span
@@ -72,15 +76,73 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading2") 1`
 </span>
 `;
 
-exports[`<Text> it matches with the previous snapshot (props.type="heading2", props.sentence=true) 1`] = `
+exports[`<Text> it matches with the previous snapshot (props.type="headline2", props.sentence=true) 1`] = `
 .emotion-0 {
   display: block;
   line-height: 1.5;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
+  -webkit-font-smoothing: antialiased;
+  font-size: 60px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+<span
+  className="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="headline3") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Rubik;
+  -webkit-font-smoothing: antialiased;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+<span
+  className="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="headline4") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Rubik;
+  -webkit-font-smoothing: antialiased;
+  font-size: 34px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+<span
+  className="emotion-0"
+>
+  text
+</span>
+`;
+
+exports[`<Text> it matches with the previous snapshot (props.type="headline5") 1`] = `
+.emotion-0 {
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
+  font-style: normal;
 }
 
 <span
@@ -90,51 +152,16 @@ exports[`<Text> it matches with the previous snapshot (props.type="heading2", pr
 </span>
 `;
 
-exports[`<Text> it matches with the previous snapshot (props.type="heading3") 1`] = `
+exports[`<Text> it matches with the previous snapshot (props.type="headline6") 1`] = `
 .emotion-0 {
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
-  font-size: 45px;
-  font-weight: 900;
-}
-
-<span
-  className="emotion-0"
->
-  text
-</span>
-`;
-
-exports[`<Text> it matches with the previous snapshot (props.type="heading4") 1`] = `
-.emotion-0 {
-  display: block;
-  line-height: 1;
-  color: #fff;
-  font-family: Montserrat;
-  -webkit-font-smoothing: antialiased;
-  font-size: 56px;
-  font-weight: 900;
-}
-
-<span
-  className="emotion-0"
->
-  text
-</span>
-`;
-
-exports[`<Text> it matches with the previous snapshot (props.type="heading5") 1`] = `
-.emotion-0 {
-  display: block;
-  line-height: 1;
-  color: #fff;
-  font-family: Montserrat;
-  -webkit-font-smoothing: antialiased;
-  font-size: 112px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
 }
 
 <span
@@ -149,10 +176,11 @@ exports[`<Text> it matches with the previous snapshot (props.type=undefined) 1`]
   display: block;
   line-height: 1;
   color: #fff;
-  font-family: Montserrat;
+  font-family: Rubik;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   font-weight: 400;
+  font-style: normal;
 }
 
 <span

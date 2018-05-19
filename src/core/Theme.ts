@@ -8,10 +8,21 @@ type SpacingVariant = 'small' | 'regular' | 'large' | 'huge' | 'enormous';
 type Spacing = number;
 
 type Typography = {
+  family: string;
   size: number;
   weight: number;
+  italic?: boolean;
 };
 
-type TypographyVariant = 'body1' | 'body2' | 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'heading5';
+type TypographyVariant =
+  | 'headline1'
+  | 'headline2'
+  | 'headline3'
+  | 'headline4'
+  | 'headline5'
+  | 'headline6'
+  | 'body1'
+  | 'body2'
+  | 'caption';
 
 export default Theme;

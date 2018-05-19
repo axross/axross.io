@@ -5,7 +5,7 @@ import { Route, Router, Switch } from 'react-router';
 import Dependency from './core/Dependency';
 import State from './core/State';
 import Theme from './core/Theme';
-import IndexPage from './view/connected/IndexPage';
+import IndexPage from './view/page/IndexPage';
 import { Provider as DependencyProvider } from './view/context/dependency';
 import { Provider as StateProvider } from './view/context/state';
 

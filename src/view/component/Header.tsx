@@ -3,14 +3,16 @@ import styled from '../../core/emotion';
 import Text from './Text';
 
 type Props = ClassAttributes<HTMLElement> & {
+  name: string;
+  title: string;
   className?: string;
 };
 
-const Header = ({ className }: Props) => (
+const Header = ({ name, title, className }: Props) => (
   <Root className={className}>
-    <Name type="heading5">@AXROSS</Name>
+    <Name type="headline1">{name}</Name>
 
-    <Title type="heading4">👨‍💻 Frontend Developer</Title>
+    <Title type="headline3">{title}</Title>
   </Root>
 );
 
@@ -31,7 +33,6 @@ const Name = styled(Text)`
 
 const Title = styled(Text)`
   grid-area: title;
-  opacity: 0.5;
 `;
 
 export default Header;

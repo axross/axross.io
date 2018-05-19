@@ -14,7 +14,7 @@ const WorkExperiencesItem = ({ workExperience, className }: Props) => (
   <Root className={className}>
     <EmployeeThumbnailImage src={workExperience.employeeThumbnailImageUrl} aspectRatio={[1, 1]} width="80px" />
 
-    <EmployeeName type="heading2">{workExperience.employeeName}</EmployeeName>
+    <EmployeeName type="headline5">{workExperience.employeeName}</EmployeeName>
 
     <Period>
       <PeriodEnd type="body2">

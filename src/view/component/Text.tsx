@@ -21,10 +21,11 @@ const Root = styled<{ _variant: TypographyVariant; sentence: boolean }, 'span'>(
   display: block;
   line-height: ${({ sentence }) => (sentence ? 1.5 : 1)};
   color: #fff;
-  font-family: Montserrat;
+  font-family: ${({ _variant, theme }) => theme.typography[_variant].family};
   -webkit-font-smoothing: antialiased;
   font-size: ${({ _variant, theme }) => theme.typography[_variant].size}px;
   font-weight: ${({ _variant, theme }) => theme.typography[_variant].weight};
+  font-style: ${({ _variant, theme }) => (theme.typography[_variant].italic ? 'italic' : 'normal')};
 `;
 
 export default Text;

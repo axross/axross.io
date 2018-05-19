@@ -11,7 +11,7 @@ type Props = ClassAttributes<HTMLElement> & {
 
 const Expertises = ({ className, children }: Props) => (
   <div className={className}>
-    <Heading type="heading3">🎓 EXPERTISE</Heading>
+    <Heading type="headline3">🎓 EXPERTISE</Heading>
 
     <Items>{children}</Items>
   </div>
@@ -22,7 +22,7 @@ const Heading = styled(Text)`
 `;
 
 const Items = styled('ul')`
-  ${grid({ columns: 3, gap: 'huge' })};  
+  ${grid({ columns: 5, gap: 'huge' })};
 `;
 
 export default Expertises;
